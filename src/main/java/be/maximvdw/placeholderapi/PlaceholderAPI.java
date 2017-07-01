@@ -11,6 +11,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import org.bukkit.entity.Player;
+import com.yapzhenyie.GadgetsMenu.player.PlayerManager;
 import be.maximvdw.placeholderapi.internal.MVdWPlaceholderReplacer;
 import be.maximvdw.placeholderapi.internal.PlaceholderAddedEvent;
 
@@ -166,4 +168,35 @@ public class PlaceholderAPI extends JavaPlugin {
 		placeholderAddedHandlers.add(handler);
 	}
 
+	    /**
+     * Get the amount of Mystery Dust.
+     */
+    public static void getMysteryDust(Player player) {
+        PlayerManager playerManager = new PlayerManager(player.getUniqueId());
+        playerManager.getMysteryDust();
+    }
+
+    /**
+     * Add the amount of Mystery Dust.
+     */
+    public static void addMysteryDust(Player player, int amount) {
+        PlayerManager playerManager = new PlayerManager(player.getUniqueId());
+        playerManager.addMysteryDust(amount);
+    }
+
+    /**
+     * Set the amount of Mystery Dust.
+     */
+    public static void setMysteryDust(Player player, int amount) {
+        PlayerManager playerManager = new PlayerManager(player.getUniqueId());
+        playerManager.setMysteryDust(amount);
+    }
+
+    /**
+     * Remove Mystery Dust from a player.
+     */
+    public static void removeMysteryDust(Player player, int amount) {
+        PlayerManager playerManager = new PlayerManager(player.getUniqueId());
+        playerManager.removeMysteryDust(amount);
+    }
 }
